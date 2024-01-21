@@ -5,12 +5,11 @@ const bookSchema = mongoose.Schema(
             type:String,
             required:true,
         },
-
         author:{
             type:String,
             required:true,
         },
-        
+
         publisherYear:{
             type:Number,
             required:true,
