@@ -1,14 +1,21 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
-import App from "./App.jsx";
-import "./index.css";
-import { BrowserRouter } from "react-router-dom";
-import { SnackbarProvider } from "notistack";
+import React from 'react'
+import { Routes,Route } from 'react-router-dom';
+import Home from './pages/Home';
+import CreateBook from './pages/CreateBooks';
+import ShowBook from './pages/ShowBooks';
+import EditBook from './pages/EditBooks';
+import DeleteBook from './pages/DeleteBooks';
+const App = () => {
+  return (
+    // <div className='bg-red-900 text-white'>App</div>
+  <Routes>
+    <Route path='/' element={<Home />} />
+    <Route path='/books/create' element={<CreateBook/>}/>
+    <Route path='/books/details/:id' element={<ShowBook/>}/>
+    <Route path='/books/edit/:id' element={<EditBook /> }/>
+    <Route path='books/delete/:id' element={<DeleteBook/>}/>
+  </Routes>
+    );
+};
 
-ReactDOM.createRoot(document.getElementById("root")).render(
-  <BrowserRouter>
-    <SnackbarProvider>
-      <App />
-    </SnackbarProvider>
-  </BrowserRouter>
-);
+export default App
